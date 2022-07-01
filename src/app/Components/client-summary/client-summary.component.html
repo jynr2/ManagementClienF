@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h4 class="modal-title">Client Summary</h4>
+</div>
+<div class="modal-body">
+    <div class="mb-3">
+        <label for="formGroupName" class="form-label">First Name</label>
+        <input type="text" class="form-control" [value]="firstName" [disabled]="isRead">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupLastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" [value]="lastName" [disabled]="isRead">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="closeModal()">Close</button>
+</div>

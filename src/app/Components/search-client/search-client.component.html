@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="card text-center">
+        <div class="card-header">
+            Search Client
+        </div>
+        <div class="card-body">
+            <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" class="mr-5">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Document type</label>
+                    <select
+                        class="form-control"
+                        (change)="ChangeDocumetType($event)"
+                        formControlName="documentType">
+                        <option *ngFor="let name of stateTypes; let i = index" [ngValue]="i"> {{name}} </option>                        
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupDocumetNumber" class="form-label">Document Number</label>
+                    <input type="number" class="form-control" id="formGroupDocumetNumber"
+                        placeholder="Document number" formControlName="documentNumber">
+                        {{clientForm.documentNumber | number}}
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="!clientForm.valid" (click)="GetClient()">Search</button>
+            </form>
+        </div>
+        <div class="card-footer text-muted bg-primary">
+           
+        </div>
+    </div>
+</div>
