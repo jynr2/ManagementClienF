@@ -1,7 +1,8 @@
+import { DocumentTypesEnum } from "../Enum/DocumentTypes";
 
 
 export class Client{
-    documentType!: number;
+    documentType!: DocumentTypesEnum;
     documentNumber!: number;
     firstName!: string;
     lastName!: string;

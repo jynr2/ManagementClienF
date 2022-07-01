@@ -48,7 +48,9 @@ export class SearchClientComponent implements OnInit {
   }
 
   GetClient(){
-    let result = this.clienteService.GetClientByDocumentNumber(this.clientForm.value.documentNumber);
+    let result = this.clienteService.GetClientByDocumentNumber
+    (this.clientForm.value.documentType, 
+    this.clientForm.value.documentNumber);
     if(result != null){
       let modalInfo = this.openModal();
       modalInfo.componentInstance.firstName = result.firstName;

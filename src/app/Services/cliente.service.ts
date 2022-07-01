@@ -10,9 +10,10 @@ export class ClienteService {
 
   constructor() { }
 
-  public GetClientByDocumentNumber(document: number) : Client
+  public GetClientByDocumentNumber(documentType: number, document: number) : Client
   {
-    let client = CLIENTS.filter(c => c.documentNumber == document);
+    let test = documentType.valueOf();
+    let client = CLIENTS.filter(c => c.documentType == documentType && c.documentNumber == document);
     return client[0];
   }
 }
